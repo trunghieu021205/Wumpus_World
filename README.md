@@ -1,7 +1,7 @@
 
 # Wumpus World - Tác tử thông minh bằng Prolog
 
-## 📖 Giới thiệu
+## Giới thiệu
 
 Đây là chương trình mô phỏng **thế giới Wumpus** (Wumpus World) – một bài toán kinh điển trong trí tuệ nhân tạo. Tác tử (agent) của chúng ta di chuyển trong hang động 4×4, tìm vàng và quay trở về điểm xuất phát (1,1) một cách an toàn.
 
@@ -16,7 +16,7 @@ Tác tử có khả năng:
 - Phát hiện vàng lấp lánh (glitter) khi đứng trên ô chứa vàng.
 - Cầm theo một mũi tên để bắn giết Wumpus.
 
-## 🧠 Chiến lược của tác tử
+## Chiến lược của tác tử
 
 Chương trình sử dụng kiến trúc **vòng lặp cảm nhận – suy nghĩ – hành động** (sense–think–act loop) kết hợp với các kỹ thuật AI cổ điển:
 
@@ -33,12 +33,12 @@ Toàn bộ hành vi được quyết định bởi hệ thống luật trong `as
 5. Nếu chưa có vàng → tìm đường đến một ô chưa thăm an toàn (có thể đến được) bằng BFS, chọn ngẫu nhiên trong số các đường đi khả thi.
 6. Nếu không còn đường nào → thông báo bế tắc và dừng.
 
-## ⚙️ Yêu cầu hệ thống
+## Yêu cầu hệ thống
 
 - **SWI-Prolog** (phiên bản 8.x trở lên).
 - Thư viện `random` và `lists` (đã có sẵn trong SWI-Prolog).
 
-## 🚀 Cách chạy
+## Cách chạy
 
 1. Tải file `wumpus.pl` về máy.
 2. Mở SWI-Prolog, nạp chương trình:
@@ -51,7 +51,7 @@ Toàn bộ hành vi được quyết định bởi hệ thống luật trong `as
    ```
    Chương trình sẽ in ra từng bước đi, vị trí, hướng, và hành động của tác tử cho đến khi thắng, thua hoặc vượt quá 100 bước.
 
-## 📁 Cấu trúc mã nguồn
+## Cấu trúc mã nguồn
 
 | Phần | Mô tả |
 |------|-------|
@@ -68,7 +68,7 @@ Toàn bộ hành vi được quyết định bởi hệ thống luật trong `as
 | `ask_action/1` | Quyết định hành động tiếp theo dựa trên chiến lược thông minh. |
 | `run/0` và `agent_loop/1` | Vòng lặp chính: cảm nhận → quyết định → hành động → kiểm tra kết thúc. |
 
-## 📊 Ví dụ kết quả chạy
+## Ví dụ kết quả chạy
 
 ```
 Step: 0 | Pos: (1,1) | Facing: east | Action: turn_left
@@ -84,13 +84,13 @@ Step: 28 | Pos: (1,2) | Facing: south | Action: forward
 
 Tác tử khám phá, bắn chết Wumpus, nhặt vàng và trở về thành công chỉ trong 29 bước.
 
-## 📝 Ghi chú
+## Ghi chú
 
 - Tác tử hiện tại **biết trước toàn bộ vị trí hố và Wumpus** để xác định ô an toàn (phục vụ mục đích minh hoạ). Có thể nâng cấp lên suy luận xác suất để tác tử tự khám phá môi trường.
 - BFS được giới hạn trong không gian trạng thái 4×4×4 = 64 trạng thái, đảm bảo hiệu năng.
 - Số bước tối đa mặc định là 100, có thể tuỳ chỉnh trong `agent_loop/1`.
 
-## 📚 Tài liệu tham khảo
+## Tài liệu tham khảo
 
 - Stuart Russell, Peter Norvig. *Artificial Intelligence: A Modern Approach* (Chapter 7 – Logical Agents).
 - SWI-Prolog Documentation: https://www.swi-prolog.org/
